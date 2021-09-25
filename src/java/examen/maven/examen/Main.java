@@ -1,25 +1,21 @@
 package maven.examen;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
-import proyecto.finall.Libro;
-
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 List <Libro> libros=new ArrayList<Libro>();
+		 List <Poliza> poliza=new ArrayList<Poliza>();
 			String opcion;
 			Scanner entrada = new Scanner(System.in);
 
 			do {
 
-				System.out.println("Bienbenido al sistema bibliotecario UCE");
+				System.out.println("Aseguradora del sur escoja una opcion");
 				System.out.println("Seleccione una opcion");
-				System.out.println("1_Estudiante");
-				System.out.println("2_Bibliotecario");
+				System.out.println("1_Ingresar poliza ");
+				System.out.println("2_Actualizar Poliza");
+				System.out.println("2_Actualizar valor");
+				System.out.println("2_Imprimir reporte");
 				System.out.println("3-Salir");
 				opcion = entrada.nextLine();
 				switch (opcion) {
@@ -29,13 +25,63 @@ public class Main {
 
 					do {
 
-						System.out.println("1_Consultar libros");
-						System.out.println("2_reservar libros");
+						System.out.println("1_Poliza general");
+						System.out.println("2_Poliza vip");
 						System.out.println("3-Salir");
 						opcion1 = entrada.nextLine();
 						switch (opcion1) {
 
 						case "1":
+							
+							  String nombre;
+						        String descripcion;
+						        String modelo;
+						        int anyoVigencia;
+						        String codigoPoliza;
+						        int valorPoliza;
+						        String codigoDescuento;
+						        int valorSeguro;
+						  
+						        //Variable auxiliar que contendrá la referencia a cada coche nuevo.
+						        Poliza aux;
+						        int i, N;
+						  
+						        //se pide por teclado el número de coches a leer
+						        do {
+						            System.out.print("Número de personas? ");
+						            N = entrada.nextInt();
+						        } while (N < 0);
+						        entrada.nextLine(); //limpiar el intro
+						  
+						        //lectura de N coches
+						        for (i = 1; i <= N; i++) {
+						            //leer datos de cada coche
+						            System.out.println("Poliza " + i);
+						            System.out.print("nombre: ");
+						            nombre = entrada.nextLine();          
+						            System.out.print("descripcion: ");
+						            descripcion = entrada.nextLine();
+						            System.out.print("Año vigencia: ");
+						           anyoVigencia = entrada.nextInt();
+						           System.out.print("codigo poliza: ");
+						            codigoPoliza = entrada.nextLine();
+						            System.out.print("valor poliza: ");
+						             valorPoliza= entrada.nextInt();
+						             System.out.print("codigo descuento: ");
+							            codigoDescuento = entrada.nextLine();
+						            entrada.nextLine(); //limpiar el intro
+						   
+						            aux = new Coche(); //Se crea un objeto Coche y se asigna su referencia a aux                          
+						   
+						            //se asignan valores a los atributos del nuevo objeto
+						            aux.setMatricula(matricula);
+						            aux.setMarca(marca);
+						            aux.setModelo(modelo);
+						            aux.setKm(Km);
+						                      
+						            //se añade el objeto al final del array
+						            coches.add(aux);
+							
 							break;
 						case "2":
 							break;
@@ -77,13 +123,15 @@ public class Main {
 						
 						  
 						         //Declaración de variables para leer los datos de los coches
+						         String codigo;
 						         String nombre;
-						         String descripcion;
-						         int anyiVigencia;
-						         String codigoPoliza;
-						         //genearl
-						         int valorPoliza;
-						         int 
+						         String autor;
+						         int anyoPublicacion;
+						         String editorial;
+						         int cantidadPaginas;
+						         int precio;
+						         String codigoAutorizacion;
+						         int tiempoAproxiLectura;
 						         
 						   
 						         //Variable auxiliar que contendrá la referencia a cada coche nuevo.
@@ -187,8 +235,4 @@ public class Main {
 				}
 			} while (!opcion.equals("3"));
 		}
-	}
-
-	}
-
-}
+	
