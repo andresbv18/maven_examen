@@ -1,6 +1,11 @@
 package maven.examen;
 
-public class PolizaVip {
+public class PolizaVip extends Poliza {
+	@Override
+	public String toString() {
+		return "PolizaVip [beneficio=" + beneficio + "]";
+	}
+
 	public String beneficio;
 
 	public String getBeneficio() {

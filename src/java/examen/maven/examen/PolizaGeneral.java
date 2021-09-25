@@ -1,6 +1,10 @@
 package maven.examen;
 
-public class PolizaGeneral {
+public class PolizaGeneral extends Poliza{
+@Override
+	public String toString() {
+		return "PolizaGeneral [codigoDescuento=" + codigoDescuento + ", numeroSeguro=" + numeroSeguro + "]";
+	}
 public String codigoDescuento;
 public int numeroSeguro;
 public String getCodigoDescuento() {

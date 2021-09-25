@@ -1,238 +1,141 @@
 package maven.examen;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		 List <Poliza> poliza=new ArrayList<Poliza>();
-			String opcion;
-			Scanner entrada = new Scanner(System.in);
+		List<Poliza> poliza = new ArrayList<Poliza>();
+		String opcion;
+		Scanner entrada = new Scanner(System.in);
 
-			do {
+		do {
 
-				System.out.println("Aseguradora del sur escoja una opcion");
-				System.out.println("Seleccione una opcion");
-				System.out.println("1_Ingresar poliza ");
-				System.out.println("2_Actualizar Poliza");
-				System.out.println("2_Actualizar valor");
-				System.out.println("2_Imprimir reporte");
-				System.out.println("3-Salir");
-				opcion = entrada.nextLine();
-				switch (opcion) {
+			System.out.println("Aseguradora del sur escoja una opcion");
+			System.out.println("Seleccione una opcion");
+			System.out.println("1_Ingresar poliza ");
+			System.out.println("2_Actualizar Poliza");
+			System.out.println("2_Actualizar valor");
+			System.out.println("2_Imprimir reporte");
+			System.out.println("3-Salir");
+			opcion = entrada.nextLine();
+			switch (opcion) {
 
-				case "1":
-					String opcion1;
+			case "1":
+				String opcion1;
 
-					do {
+				do {
 
-						System.out.println("1_Poliza general");
-						System.out.println("2_Poliza vip");
-						System.out.println("3-Salir");
-						opcion1 = entrada.nextLine();
-						switch (opcion1) {
+					System.out.println("1_Poliza general");
+					System.out.println("2_Poliza vip");
+					System.out.println("3-Salir");
+					opcion1 = entrada.nextLine();
+					switch (opcion1) {
 
-						case "1":
-							
-							  String nombre;
-						        String descripcion;
-						        String modelo;
-						        int anyoVigencia;
-						        String codigoPoliza;
-						        int valorPoliza;
-						        String codigoDescuento;
-						        int valorSeguro;
-						  
-						        //Variable auxiliar que contendrá la referencia a cada coche nuevo.
-						        Poliza aux;
-						        int i, N;
-						  
-						        //se pide por teclado el número de coches a leer
-						        do {
-						            System.out.print("Número de personas? ");
-						            N = entrada.nextInt();
-						        } while (N < 0);
-						        entrada.nextLine(); //limpiar el intro
-						  
-						        //lectura de N coches
-						        for (i = 1; i <= N; i++) {
-						            //leer datos de cada coche
-						            System.out.println("Poliza " + i);
-						            System.out.print("nombre: ");
-						            nombre = entrada.nextLine();          
-						            System.out.print("descripcion: ");
-						            descripcion = entrada.nextLine();
-						            System.out.print("Año vigencia: ");
-						           anyoVigencia = entrada.nextInt();
-						           System.out.print("codigo poliza: ");
-						            codigoPoliza = entrada.nextLine();
-						            System.out.print("valor poliza: ");
-						             valorPoliza= entrada.nextInt();
-						             System.out.print("codigo descuento: ");
-							            codigoDescuento = entrada.nextLine();
-						            entrada.nextLine(); //limpiar el intro
-						   
-						            aux = new Coche(); //Se crea un objeto Coche y se asigna su referencia a aux                          
-						   
-						            //se asignan valores a los atributos del nuevo objeto
-						            aux.setMatricula(matricula);
-						            aux.setMarca(marca);
-						            aux.setModelo(modelo);
-						            aux.setKm(Km);
-						                      
-						            //se añade el objeto al final del array
-						            coches.add(aux);
-							
-							break;
-						case "2":
-							break;
+					case "1":
+						PolizaGeneral poliza1 = new PolizaGeneral();
+						String nombre;
+						String descripcion;
+						int anyoVigencia;
+						String codigoPoliza;
+						int valorPoliza;
+						String codigoDescuento;
+						int numeroSeguro;
 
-						case "3":
+						System.out.println("Poliza ");
+						System.out.print("nombre: ");
+						nombre = entrada.nextLine();
+						System.out.print("descripcion: ");
+						descripcion = entrada.nextLine();
+						System.out.print("Año vigencia: ");
+						anyoVigencia = entrada.nextInt();
+						System.out.print("codigo poliza: ");
+						codigoPoliza = entrada.nextLine();
+						System.out.print("valor poliza: ");
+						valorPoliza = entrada.nextInt();
+						System.out.print("numero seguro:");
+						numeroSeguro = entrada.nextInt();
+						System.out.print("codigo descuento: ");
+						codigoDescuento = entrada.nextLine();
+						entrada.nextLine(); // limpiar el intro
 
-							System.out.println("Saliendo");
-							break;
-						default:
-							System.out.println("opcion incorrecta");
-							break;
+						poliza1.setAnyoVigencia(anyoVigencia);
+						poliza1.setCodigoDescuento(codigoDescuento);
+						poliza1.setCodigoPoliza(codigoPoliza);
+						poliza1.setDescripcion(descripcion);
+						poliza1.setNombre(nombre);
+						poliza1.setNumeroSeguro(numeroSeguro);
+						poliza1.setValorPoliza(valorPoliza);
+poliza.add(poliza1);
+						break;
+					case "2":
+						PolizaVip poliza2 = new PolizaVip();
+						String nombre2;
+						String descripcion2;
+						int anyoVigencia2;
+						String codigoPoliza2;
+						int valorPoliza2;
+						String codigoDescuento2;
+						int numeroSeguro2;
+						String beneficio;
 
-						}
+						System.out.println("Poliza ");
+						System.out.print("nombre: ");
+						nombre2 = entrada.nextLine();
+						System.out.print("descripcion: ");
+						descripcion2= entrada.nextLine();
+						System.out.print("Año vigencia: ");
+						anyoVigencia2 = entrada.nextInt();
+						System.out.print("codigo poliza: ");
+						codigoPoliza2 = entrada.nextLine();
+						System.out.print("valor poliza: ");
+						valorPoliza2 = entrada.nextInt();
+						System.out.print("codigo descuento: ");
+						beneficio = entrada.nextLine();
+						entrada.nextLine(); // limpiar el intro
 
-					} while (!opcion1.equals("3"));
-
-					break;
-				case "2":
-					String opcion2;
-
-					do {
-
-						System.out.println("1_Ingresar un libro");
-						System.out.println("2_Prestar un libro");
-						System.out.println("3_Aplazar fecha de netrega");
-						System.out.println("4-Salir");
-						opcion2 = entrada.nextLine();
-						switch (opcion2) {
-
-						case "1": 
-							
-						  //Se crea un ArrayList para guardar objetos de tipo Coche.
-					
-						     
-						  
-						       
-						    
-						     //Método para leer coches e introducirlos en el array
+						poliza2.setAnyoVigencia(anyoVigencia2);
 						
-						  
-						         //Declaración de variables para leer los datos de los coches
-						         String codigo;
-						         String nombre;
-						         String autor;
-						         int anyoPublicacion;
-						         String editorial;
-						         int cantidadPaginas;
-						         int precio;
-						         String codigoAutorizacion;
-						         int tiempoAproxiLectura;
-						         
-						   
-						         //Variable auxiliar que contendrá la referencia a cada coche nuevo.
-						         Libro aux;
-						         int i, N;
-						   
-						         //se pide por teclado el número de coches a leer
-						         do {
-						             System.out.print("Número de libros? ");
-						             N = entrada.nextInt();
-						         } while (N < 0);
-						         entrada.nextLine(); //limpiar el intro
-						   
-						         //lectura de N coches
-						         for (i = 1; i <= N; i++) {
-						             //leer datos de cada coche
-						             System.out.println("Libro " + i);
-						             System.out.print("Codigo: ");
-						             codigo = entrada.nextLine();          
-						             System.out.print("Nombre: ");
-						             nombre= entrada.nextLine();
-						             System.out.print("Autor: ");
-						             autor = entrada.nextLine();
-						             System.out.print("Año de puiblicacion: ");
-						             anyoPublicacion= entrada.nextInt();
-						             System.out.print("Editorial: ");
-						             editorial = entrada.nextLine();
-						             System.out.print(": ");
-						             cantidadPaginas= entrada.nextInt();
-						             System.out.print("Precio: ");
-						             precio= entrada.nextInt();
-						           
-						             String opcion3;
-						     		do {
-						     			System.out.println("Escoja una opcion");
-						     			System.out.println("1_Libro de trabajo");
-						     			System.out.println("2_Libro de lectura");
-						     			System.out.println("3.Salir\n");
-						     			opcion3 = entrada.nextLine();
+						poliza2.setCodigoPoliza(codigoPoliza2);
+						poliza2.setDescripcion(descripcion2);
+						poliza2.setNombre(nombre2);
+						
+						poliza2.setValorPoliza(valorPoliza2);
+						poliza2.setBeneficio(beneficio);
+poliza.add(poliza2);
+						break;
 
-						     			if (opcion3.equals("1")) {
-						     				System.out.println("Codigo de autorizacion");
-						     				codigoAutorizacion =entrada.nextLine();
+					case "3":
 
-						     			} else if (opcion3.equals("2")) {
-						     				System.out.println("Tiempo aproximado de lectura");
-						     				
-						     				codigoAutorizacion=entrada.nextLine();
-						     			}else if(opcion3.equals("3")) {
-						     				System.out.println("Cerrando el sistema ");
-						     			}
+						System.out.println("Saliendo");
+						break;
+					default:
+						System.out.println("opcion incorrecta");
+						break;
 
-						     		} while (!opcion3.equals("3"));
-						     	      entrada.nextLine(); //limpiar el intro
-						    
-						             aux = new Libro(); //Se crea un objeto Coche y se asigna su referencia a aux                          
-						    
-						             //se asignan valores a los atributos del nuevo objeto
-						             aux.setCodigo(codigo);
-						           aux.setNombre(nombre);
-						           aux.setAutor(autor);
-						           aux.setAnyoPublicacion(anyoPublicacion);
-						           aux.setEditorial(editorial);
-						           aux.setCantidadPaginas(cantidadPaginas);
-						           aux.setPrecio(precio);
-						           aux.setCodigoAutorizacion(codigoAutorizacion);
-						           aux.setTiempoAproxiLectura(tiempoAproxiLectura);
-						        
-						                       
-						             //se añade el objeto al final del array
-						             libros.add(aux);
-						      
-							
-							
-							break;
-							
-						case "2":
-							break;
+					}
 
-						case "3":
+				} while (!opcion1.equals("3"));
 
-							System.out.println("Saliendo");
-							break;
-						default:
-							System.out.println("opcion incorrecta\n");
-							break;
+				break;
+			case "3":
+				
+				
+				
+				break;
+			case "4":
 
-						}
+				System.out.println("Saliendo");
+				break;
+			default:
+				System.out.println("opcion incorrecta");
+				break;
 
-					} while (!opcion2.equals("4"));
+			}
+		} while (!opcion.equals("4"));
+	}
 
-					break;
-				case "3":
-
-					System.out.println("Saliendo");
-					break;
-				default:
-					System.out.println("opcion incorrecta");
-					break;
-
-				}
-			} while (!opcion.equals("3"));
-		}
-	
+}
